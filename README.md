@@ -1,75 +1,58 @@
-# Memory Drum Simulator
+# Digital Memory Drum Simulator
 
-An interactive web-based simulation of the Paired Association Learning (PAL) Memory Drum, a classic psychology research apparatus pioneered by American psychologist Dr. Mary Whiton Calkins in 1894.
+An interactive, 3D web-based simulation of the Paired-Associate Learning (PAL) Memory Drum, a classic psychology research apparatus pioneered by American psychologist Dr. Mary Whiton Calkins in 1894.
 
 ## About the Project
 
-The Memory Drum is a historical psychological testing device used to measure learning and memory retention through paired-association learning experiments. This digital simulation recreates the mechanical experience of the original device, allowing researchers and students to understand how classic psychology experiments were conducted.
+The Memory Drum is a historical psychological testing device used to measure learning and memory retention through paired-association learning experiments. This upgraded digital simulation recreates the physical mechanics of the original laboratory equipment—complete with a 10-sided 3D rotating cylinder and interactive mechanical levers—allowing researchers and students to experience strict serial learning trials from home.
 
 ## Key Features
 
-* **Interactive Learning Phase:** View both stimulus (nonsense syllable) and response (sensible word) pairs.
-* **Recall Phase:** Test memory by hiding the response while showing the stimulus.
-* **Mechanical Animation:** Simulated metal flaps that open and close to reveal/conceal information.
-* **Visual Timer:** LED-style display showing exposure duration.
-* **Responsive Design:** Works seamlessly on desktop and mobile devices.
-* **Historical Accuracy:** Based on the original 1894 apparatus design.
+* **True 3D Cylinder Mechanics:** A mathematically accurate 10-sided polygon drum that physically rotates in 3D space, eliminating Ebbinghaus distraction errors by hiding upcoming words.
+* **11 Unique Stimulus Sets:** Includes the original college laboratory list plus 10 additional randomized lists to reduce psychological bias and exposure manipulation between trials.
+* **Interactive Mechanical Levers:** Realistic drag-and-pull UI levers to engage the different experimental phases.
+* **Automated Recall Flaps:** Simulated metal casing and mechanical shutters that open and close to reveal or conceal the response variables based on the active trial phase.
+* **Visual LED Timer:** Real-time digital display tracking the 2-second exposure durations and 0.5-second rotational pauses.
+* **Responsive Design:** Optimized for both desktop laboratory environments and mobile devices.
 
 ## How It Works
 
 ### The Apparatus
+The simulator houses 11 distinct stimulus sets. Each set contains 10 paired associations (e.g., a nonsense syllable like "ZEK" paired with a sensible word like "Apple"). To prevent the serial position effect, the active list is automatically shuffled via a Fisher-Yates algorithm at the start of every new phase.
 
-The simulator displays 10 paired associations:
+### Experimental Phases
 
-* ZEK → Apple
-* TOR → Clock
-* RIM → Table
-* FUG → Book
-* LEP → Tree
-* DAX → Dog
-* VEK → Lamp
-* MIP → River
-* JOR → Pen
-* TUS → Star
-
-### Learning Phases
-
-**1. Learning Phase (All Up)**
+**1. Learning Phase**
+* Activated by pulling the top lever.
 * Both the stimulus (nonsense syllable) and response (word) are visible.
-* Mechanical flaps open to reveal both sides of each pair.
-* Helps establish initial memory associations.
-* Each pair is displayed for 2 seconds.
-* 0.5-second pause between pairs.
+* Mechanical flaps open fully to reveal both sides of each pair.
+* Each pair is exposed for exactly 2 seconds, followed by a 0.5-second mechanical rotation pause.
 
-**2. Recall Phase (Right Closed)**
-* Only the stimulus (left side) is visible.
-* The response side is covered by closed flaps.
-* Tests the participant's ability to recall the association.
-* Participant attempts to recall the response before flaps open.
-* Same timing as learning phase.
+**2. Recall Phase**
+* Activated by pulling the bottom lever.
+* Only the stimulus (left side) is visible. The response side is physically concealed by the closed right shutter.
+* Tests the participant's ability to recall the association before the drum steps forward.
+* Maintains the strict 2-second exposure and 0.5-second rotation timing.
 
 **3. Stop / Reset**
-* Halts the current session and returns to ready state.
+* Halts the current session, resets the mechanical levers, and returns the drum to the 0-degree "READY" state.
 
 ## Getting Started
 
-### Using the Simulator
+Visit the live web application: [Digital Memory Drum](https://sarahqureshipsych-cmd.github.io/memorydrum/)
 
-1. **Visit the Web Application:** Open the hosted version at https://sarahqureshipsych-cmd.github.io/memorydrum/
-2. **Start a Session:** 
-   * Click "1. Learning Phase (All Up)" to begin learning the pairs.
-   * Click "2. Recall Phase (Right Closed)" to test your memory.
-   * Click "Stop / Reset" to stop and reset the timer.
-3. **Observe the Results:** 
-   * The LED display shows elapsed time for each pair.
-   * Pairs are presented in random order each session.
-   * When all pairs are complete, the display shows "END".
+**Conducting a Trial:**
+1. Select one of the 11 Stimulus Sets from the left module.
+2. Click or pull the **"1. Learning Phase"** lever to begin initial memory encoding.
+3. Once the list completes, click or pull the **"2. Recall Phase"** lever to test retention.
+4. Click **"Stop / Reset"** at any time to abort the current trial.
 
 ## Repository Structure
 
 ```text
 memorydrum/
-├── README.md # This file
-├── index.html # Main application (HTML + CSS + JavaScript)
-├── sitemap.xml # SEO sitemap
-└── googlee446513605abb7fb.html # Google verification file
+├── README.md                          # Project documentation
+├── index.html                         # Main application (HTML + CSS + 3D JavaScript logic)
+├── sitemap.xml                        # SEO sitemap
+├── favicon.png                        # Transparent site icon
+└── googlee446513605abb7fb.html        # Google verification file
