@@ -347,7 +347,7 @@
             line-height: 1.6;
         }
 
-        /* MOBILE RESPONSIVENESS FIX */
+        /* CORRECTED MOBILE RESPONSIVENESS */
         @media (max-width: 850px) {
             body {
                 justify-content: flex-start;
@@ -356,6 +356,7 @@
             .main-layout {
                 flex-direction: column;
                 align-items: center;
+                gap: 50px; /* Forces large gap between lists and machine */
             }
             .list-module {
                 width: 100%;
@@ -376,7 +377,7 @@
             }
             .machine-chassis {
                 flex-direction: column;
-                padding: 25px 20px;
+                padding: 25px 10px; /* Reduced side padding so it fits natively */
                 gap: 25px;
                 width: 100%;
                 max-width: 430px;
@@ -397,13 +398,6 @@
                 width: 100%;
                 justify-content: center;
                 gap: 20px;
-            }
-        }
-        @media (max-width: 400px) {
-            .machine-chassis {
-                transform: scale(0.9);
-                transform-origin: top center;
-                margin-bottom: -10px;
             }
         }
     </style>
