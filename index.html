@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Memory Drum Simulator | Cognitive Psychology Apparatus</title>
-    <meta name="description" content="A free, web-based digital memory drum simulator designed for experimental psychology, serial learning, and cognitive memory trials.">
-    <meta name="google-site-verification" content="cGQfFuid95y2vCZh_TPfSRYvzd_NCKznaTgJ4Druhlo" />
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>3D Memory Drum Sandbox</title>
     <style>
         * {
             box-sizing: border-box;
@@ -100,9 +97,7 @@
             border: 2px solid #222;
         }
 
-        /* ----------------------------------- */
-        /* RIGHT SIDE: UNIFIED MACHINE CHASSIS */
-        /* ----------------------------------- */
+        /* THE UNIFIED MACHINE CHASSIS */
         .machine-chassis {
             display: flex;
             background: linear-gradient(135deg, #a4acb3, #8a939a);
@@ -114,7 +109,9 @@
             gap: 40px;
         }
 
-        /* DRUM MODULE */
+        /* ----------------------------------- */
+        /* LEFT SIDE: 3D DRUM MODULE           */
+        /* ----------------------------------- */
         .drum-module {
             width: 350px;
             height: 180px; 
@@ -161,20 +158,15 @@
             justify-content: center;
             font-size: 34px;
             font-weight: 900;
-            color: transparent; 
+            color: #222; 
             letter-spacing: 2px;
-            transition: color 0.1s;
         }
 
         .divider {
             width: 2px;
-            background-color: #ccc;
+            background-color: #999;
             height: 80%;
-            transition: background-color 0.1s;
         }
-
-        .panel.active .syllable-slot { color: #222; }
-        .panel.active .divider { background-color: #999; }
 
         .casing {
             width: 100%;
@@ -187,32 +179,29 @@
         .metal-panel {
             position: absolute;
             width: 100%;
-            height: 92px; 
-            top: 4px; 
+            height: 82px;
+            top: 9px;
             background: linear-gradient(to bottom, #9ca4ab, #8a939a); 
-            border-top: 2px solid #7a8289; 
-            border-bottom: 2px solid #666;
+            border-top: 1px solid #b4bcc3;
+            border-bottom: 1px solid #666;
             backface-visibility: hidden;
             box-shadow: inset 0px 2px 5px rgba(255,255,255,0.2);
         }
 
-        /* FLAP FIX: Perfect Symmetrical Alignment */
         .flap-overlay {
             position: absolute;
             width: 100%;
-            height: 90px;
-            top: 5px;
+            height: 82px;
+            top: 9px;
             left: 0;
-            transform: translateZ(142px); 
+            transform: translateZ(128px); 
+            display: flex;
             z-index: 100;
             transform-style: preserve-3d;
         }
 
         .flap {
-            position: absolute;
-            width: 50%;
-            height: 100%;
-            top: 0;
+            flex: 1;
             background: linear-gradient(to bottom, #a4acb3, #8a939a);
             border: 1px solid #555;
             border-bottom: 3px solid #333;
@@ -221,18 +210,13 @@
             transition: transform 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
 
-        .left-flap {
-            left: 0; 
-        }
-
-        .right-flap {
-            right: 0; 
-        }
-
         .flap.open { transform: rotateX(95deg); box-shadow: none; }
         .flap.closed { transform: rotateX(0deg); }
 
-        /* LEVER CONTROL PANEL */
+
+        /* ----------------------------------- */
+        /* RIGHT SIDE: LEVER CONTROL PANEL     */
+        /* ----------------------------------- */
         .control-module {
             display: flex;
             flex-direction: column;
@@ -271,6 +255,7 @@
             border: 1px solid #222;
         }
 
+        /* Pushing the lever down */
         .lever-knob.pulled {
             transform: translateY(32px); 
         }
@@ -284,7 +269,7 @@
             border-top: 2px solid #777;
         }
 
-        .control-btn {
+        button {
             padding: 12px 18px;
             font-size: 13px;
             font-weight: bold;
@@ -298,8 +283,7 @@
             width: 210px;
             text-align: left;
         }
-        
-        .control-btn:active {
+        button:active {
             transform: translateY(2px);
             box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
         }
@@ -323,81 +307,59 @@
             min-width: 70px;
         }
 
-        /* RESTORED PRODUCTION STYLES */
-        .historical-note {
-            color: #ecf0f1;
-            font-family: 'Georgia', serif;
-            font-size: 16px;
-            font-style: italic;
-            margin-top: 35px;
-            text-align: center;
-            max-width: 650px;
-            letter-spacing: 1px;
-            line-height: 1.4;
-        }
-
-        .developer-credit {
-            color: #9ba3a9;
-            font-family: 'Arial', sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 15px;
-            text-align: center;
-            line-height: 1.6;
-        }
-
-        /* CORRECTED MOBILE RESPONSIVENESS */
+        /* MOBILE RESPONSIVENESS MEDIA QUERY */
         @media (max-width: 850px) {
             body {
                 justify-content: flex-start;
-                padding-top: 30px;
+                padding: 15px 10px;
             }
             .main-layout {
                 flex-direction: column;
                 align-items: center;
-                gap: 50px; /* Forces large gap between lists and machine */
+                gap: 25px;
+                width: 100%;
             }
             .list-module {
                 width: 100%;
-                max-width: 430px;
+                max-width: 400px;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 5px;
+                gap: 4px;
+                padding: 10px;
             }
             .list-header {
                 width: 100%;
-                margin-bottom: 5px;
+                margin-bottom: 4px;
             }
             .list-btn {
-                width: auto;
-                flex: 1 1 30%;
+                flex: 1 1 22%;
+                font-size: 10px;
+                padding: 6px 4px;
                 margin-bottom: 0;
             }
             .machine-chassis {
                 flex-direction: column;
-                padding: 25px 10px; /* Reduced side padding so it fits natively */
-                gap: 25px;
+                padding: 20px 15px;
+                gap: 20px;
                 width: 100%;
-                max-width: 430px;
+                max-width: 400px;
+            }
+            .drum-module {
+                width: 100%;
+                max-width: 320px;
             }
             .control-module {
                 border-left: none;
                 border-top: 2px solid #777;
                 padding-left: 0;
-                padding-top: 25px;
+                padding-top: 20px;
                 align-items: center;
                 width: 100%;
             }
-            .lever-row {
-                width: 100%;
-                justify-content: center;
-            }
             .action-row {
                 width: 100%;
-                justify-content: center;
-                gap: 20px;
+                justify-content: space-around;
             }
         }
     </style>
@@ -413,7 +375,7 @@
         <!-- LEFT: LIST SELECTION MODULE -->
         <div class="list-module">
             <div class="list-header">Stimulus Sets</div>
-            <button class="list-btn active" onclick="loadList(0)">List 1 (College)</button>
+            <button class="list-btn active" onclick="loadList(0)">List 1</button>
             <button class="list-btn" onclick="loadList(1)">List 2</button>
             <button class="list-btn" onclick="loadList(2)">List 3</button>
             <button class="list-btn" onclick="loadList(3)">List 4</button>
@@ -429,10 +391,11 @@
         <!-- RIGHT: MACHINE CHASSIS -->
         <div class="machine-chassis">
             
+            <!-- DRUM MODULE -->
             <div class="drum-module">
                 <div class="scene">
                     <div class="drum" id="spinDrum">
-                        <div class="panel active" style="transform: rotateX(0deg) translateZ(123px);">
+                        <div class="panel" style="transform: rotateX(0deg) translateZ(123px);">
                             <div class="syllable-slot">READY</div>
                             <div class="divider"></div>
                             <div class="syllable-slot">READY</div>
@@ -440,15 +403,15 @@
                     </div>
 
                     <div class="casing">
-                        <div class="metal-panel" style="transform: rotateX(36deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(72deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(108deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(144deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(180deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(-36deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(-72deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(-108deg) translateZ(140px);"></div>
-                        <div class="metal-panel" style="transform: rotateX(-144deg) translateZ(140px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(36deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(72deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(108deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(144deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(180deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(-36deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(-72deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(-108deg) translateZ(125px);"></div>
+                        <div class="metal-panel" style="transform: rotateX(-144deg) translateZ(125px);"></div>
                     </div>
 
                     <div class="flap-overlay">
@@ -458,75 +421,42 @@
                 </div>
             </div>
 
+            <!-- CONTROL PANEL MODULE -->
             <div class="control-module">
                 
                 <div class="lever-row">
                     <div class="lever-track">
                         <div class="lever-knob" id="learnLever" onclick="startLearning()"></div>
                     </div>
-                    <button class="control-btn" onclick="startLearning()">1. Learning Phase</button>
+                    <button onclick="startLearning()">1. Learning Phase</button>
                 </div>
 
                 <div class="lever-row">
                     <div class="lever-track">
                         <div class="lever-knob" id="recallLever" onclick="startRecall()"></div>
                     </div>
-                    <button class="control-btn" onclick="startRecall()">2. Recall Phase</button>
+                    <button onclick="startRecall()">2. Recall Phase</button>
                 </div>
 
                 <div class="action-row">
-                    <button class="control-btn btn-stop" onclick="stopDrum()">Stop / Reset</button>
+                    <button class="btn-stop" onclick="stopDrum()">Stop / Reset</button>
                     <div class="led-display" id="timerText">0.0s</div>
                 </div>
 
             </div>
+
         </div>
-    </div>
 
-    <!-- RESTORED PRODUCTION FOOTER ELEMENTS -->
-    <p style="margin-top: 70px; font-size: 15px; color: #ffffff; font-weight: normal; font-style: normal; text-align: center;">
-        Paired-associate technique first pioneered by American psychologist and philosopher <span style="white-space: nowrap;">Dr. Mary Whiton Calkins, 1894.</span>
-    </p>
-    
-    <div class="developer-credit">
-        © 2026 Sarah Qureshi. All Rights Reserved.<br>
-        Department of Psychology, Government College for Women M.A road, J & K, India.
-    </div>
-
-    <div style="text-align: center; padding: 20px; margin-top: 40px; font-family: sans-serif; font-size: 14px; color: #ffffff; border-top: 1px solid rgba(255, 255, 255, 0.2);">
-        <p>Created by Sarah Qureshi | <a href="https://www.linkedin.com/in/sarah-qureshi-33a459438" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: bold;">Connect on LinkedIn</a></p>
-    </div>
-    
-    <div style="max-width: 640px; margin: 20px auto; padding: 20px 24px; background: #1a1a24; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: #ecf0f1; line-height: 1.6; text-align: left; box-sizing: border-box;">
-        <h3 style="margin-top: 0; margin-bottom: 8px; font-size: 15px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #e3b881;">About the Digital Memory Drum</h3>
-        <p style="margin: 0; font-size: 14.5px;">
-            The Memory Drum is a classic piece of experimental psychology laboratory equipment, originally invented by Georg Elias Müller and Friedrich Schumann in 1887, to study serial learning, rote memory, and nonsense syllable retention. This web-based digital simulator modernizes the traditional mechanical apparatus. If you missed your psychology lab practical, this free digital simulator allows you to learn how to use a memory drum online and recreate strict serial learning and paired-associate trials from home.
-        </p>
-    </div>
-    
-    <div style="max-width: 640px; margin: 35px auto; padding: 20px 24px; background: #fbfbfb; border-left: 4px solid #4b5563; border-radius: 6px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #374151; line-height: 1.6; text-align: left; box-sizing: border-box;">
-        <h3 style="margin-top: 0; margin-bottom: 8px; font-size: 15px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: #374151;">In Dedication</h3>
-        <p style="margin: 0; font-size: 14.5px;">
-            This digital simulator is dedicated to <strong>Dr. Mary Whiton Calkins (1863–1930)</strong>, the pioneering American psychologist who originally developed the paired-associate learning technique—one of the foundational cognitive methods tested using the mechanical memory drum. Despite fulfilling every requirement for a Ph.D. with distinction, Harvard University consistently refused to grant her the degree solely on the basis of her gender. Her legacy is a lasting reminder that brilliant, necessary work exists entirely independent of institutional validation.
-        </p>
     </div>
 
     <script>
-        const allLists = [
-            [["ZEK", "Apple"], ["TOR", "Clock"], ["RIM", "Table"], ["FUG", "Book"], ["LEP", "Tree"], ["DAX", "Dog"], ["VEK", "Lamp"], ["MIP", "River"], ["JOR", "Pen"], ["TUS", "Star"]],
-            [["BIV", "Cloud"], ["JEX", "Train"], ["KUF", "Shoe"], ["XAJ", "Bird"], ["POZ", "Glass"], ["YEM", "House"], ["NOZ", "Moon"], ["WIB", "Cat"], ["VOP", "Door"], ["RUX", "Bread"]],
-            [["ZOL", "Desk"], ["FEG", "Leaf"], ["YUB", "Fire"], ["KIB", "Ring"], ["VAB", "Fish"], ["CUX", "Shirt"], ["MEZ", "Boat"], ["JOP", "Hat"], ["WEF", "Cup"], ["TIB", "Stone"]],
-            [["YUD", "Road"], ["PIV", "Plate"], ["ZAF", "Hand"], ["KOC", "Bear"], ["LUJ", "Key"], ["NEX", "Window"], ["ROV", "Grass"], ["WEK", "Sun"], ["GIX", "Wall"], ["HUV", "Plane"]],
-            [["QAM", "Bed"], ["YIL", "Fork"], ["JEF", "Snow"], ["CUV", "Hair"], ["NUK", "Coat"], ["ZIB", "Sand"], ["MEF", "Wood"], ["WOJ", "Hill"], ["KEX", "Box"], ["VUZ", "Phone"]],
-            [["BEX", "Coin"], ["YOM", "Rain"], ["FUV", "Milk"], ["QOB", "Bike"], ["VEJ", "Sock"], ["NUZ", "Gate"], ["ZEM", "Paper"], ["WUK", "Rope"], ["GAV", "Bridge"], ["JUK", "Plant"]],
-            [["ZUB", "Paint"], ["KIV", "Wheel"], ["YAX", "Farm"], ["MEB", "Soap"], ["JID", "Drum"], ["VIX", "Ship"], ["QUF", "Cave"], ["WOL", "Bell"], ["CEF", "Wing"], ["NUV", "Gold"]],
-            [["YOV", "Dust"], ["JAL", "Root"], ["BEK", "Wire"], ["VUC", "Seed"], ["MUX", "Rock"], ["ZIF", "Tent"], ["KOL", "King"], ["WOP", "Crown"], ["FEJ", "Bowl"], ["QIK", "Wind"]],
-            [["ZEX", "Face"], ["VOB", "Bone"], ["YEK", "Lock"], ["JUC", "Map"], ["KIJ", "Shell"], ["MEP", "Card"], ["NUX", "Ice"], ["WAF", "Pot"], ["QUB", "Mask"], ["GIZ", "Note"]],
-            [["JIK", "Brush"], ["VAM", "Toy"], ["YUF", "Flag"], ["KOB", "Cake"], ["ZIL", "Dirt"], ["WEM", "Pool"], ["NUF", "Stick"], ["QEZ", "Bag"], ["FIJ", "Thread"], ["MUC", "Town"]],
-            [["YIK", "Shop"], ["ZOF", "Park"], ["VUL", "Meat"], ["JEB", "Iron"], ["KUX", "Salt"], ["WIV", "Floor"], ["NOC", "Yard"], ["QAF", "Roof"], ["MIJ", "Egg"], ["FEX", "Cheese"]]
+        const originalPairs = [
+            ["ZEK", "Apple"], ["TOR", "Clock"], ["RIM", "Table"],
+            ["FUG", "Book"], ["LEP", "Tree"], ["DAX", "Dog"],
+            ["VEK", "Lamp"], ["MIP", "River"], ["JOR", "Pen"], ["TUS", "Star"]
         ];
 
-        let currentPairs = [...allLists[0]];
+        let currentPairs = [...originalPairs];
         let currentIndex = 0;
         let currentRotation = 0;
         
@@ -544,22 +474,9 @@
         const timerText = document.getElementById("timerText");
         const leftFlaps = document.querySelectorAll('.left-flap');
         const rightFlaps = document.querySelectorAll('.right-flap');
+        
         const learnLever = document.getElementById("learnLever");
         const recallLever = document.getElementById("recallLever");
-        const listButtons = document.querySelectorAll('.list-btn');
-
-        function loadList(index) {
-            stopDrum();
-            currentPairs = [...allLists[index]];
-            
-            listButtons.forEach((btn, i) => {
-                if(i === index) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-        }
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
