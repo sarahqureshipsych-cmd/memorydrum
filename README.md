@@ -4,7 +4,7 @@ An interactive, 3D web-based simulation of the Paired-Associate Learning (PAL) M
 
 ## About the Project
 
-The Memory Drum is a historical psychological testing device used to measure learning and memory retention through paired-association learning experiments. This upgraded digital simulation recreates the physical mechanics of the original laboratory equipment—complete with a 10-sided 3D rotating cylinder and interactive mechanical levers—allowing researchers and students to experience strict serial learning trials from home.
+The Memory Drum is a historical psychological testing device used to measure learning and memory retention through paired-association learning experiments. This upgraded digital simulation recreates the physical mechanics of the original laboratory equipment, complete with a 10-sided 3D rotating cylinder and interactive mechanical levers, allowing researchers and students to experience strict serial learning trials from home.
 
 ## Key Features
 
@@ -18,23 +18,27 @@ The Memory Drum is a historical psychological testing device used to measure lea
 ## How It Works
 
 ### The Apparatus
+
 The simulator houses 11 distinct stimulus sets. Each set contains 10 paired associations (e.g., a nonsense syllable like "ZEK" paired with a sensible word like "Apple"). To prevent the serial position effect, the active list is automatically shuffled via a Fisher-Yates algorithm at the start of every new phase.
 
 ### Experimental Phases
 
 **1. Learning Phase**
+
 * Activated by pulling the top lever.
 * Both the stimulus (nonsense syllable) and response (word) are visible.
 * Mechanical flaps open fully to reveal both sides of each pair.
 * Each pair is exposed for exactly 2 seconds, followed by a 0.5-second mechanical rotation pause.
 
 **2. Recall Phase**
+
 * Activated by pulling the bottom lever.
 * Only the stimulus (left side) is visible. The response side is physically concealed by the closed right shutter.
 * Tests the participant's ability to recall the association before the drum steps forward.
 * Maintains the strict 2-second exposure and 0.5-second rotation timing.
 
 **3. Stop / Reset**
+
 * Halts the current session, resets the mechanical levers, and returns the drum to the 0-degree "READY" state.
 
 ## Getting Started
@@ -42,17 +46,37 @@ The simulator houses 11 distinct stimulus sets. Each set contains 10 paired asso
 Visit the live web application: [Digital Memory Drum](https://sarahqureshipsych-cmd.github.io/memorydrum/)
 
 **Conducting a Trial:**
+
 1. Select one of the 11 Stimulus Sets from the left module.
-2. Click or pull the **"1. Learning Phase"** lever to begin initial memory encoding.
-3. Once the list completes, click or pull the **"2. Recall Phase"** lever to test retention.
-4. Click **"Stop / Reset"** at any time to abort the current trial.
+2. Click or pull the "1. Learning Phase" lever to begin initial memory encoding.
+3. Once the list completes, click or pull the "2. Recall Phase" lever to test retention.
+4. Click "Stop / Reset" at any time to abort the current trial.
+
+## Acknowledgments
+
+### Project Guidance
+
+This project was developed under the guidance of **Dr. Malik Roshan Ara**, Head, Department of Psychology, Government College for Women, who reviewed the simulator:
+
+> "A commendable and creative attempt to translate a basic psychological concept into an interactive learning tool."
+
+> "A promising and innovative student initiative."
+
+### Endorsed By
+
+**Dr. Joel Freund**, Professor Emeritus of Psychology at the University of Arkansas, who used Stowe memory drums throughout his own research career, reviewed the simulator:
+
+> "I am impressed by your research and recreation of a memory drum."
+
+> "Your interest in the history and seeing your project brought back pleasant memories and made me smile."
 
 ## Repository Structure
 
-```text
+```
 memorydrum/
 ├── README.md                          # Project documentation
 ├── index.html                         # Main application (HTML + CSS + 3D JavaScript logic)
 ├── sitemap.xml                        # SEO sitemap
 ├── favicon.png                        # Transparent site icon
 └── googlee446513605abb7fb.html        # Google verification file
+```
