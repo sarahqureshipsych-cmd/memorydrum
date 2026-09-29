@@ -58,25 +58,23 @@ Visit the live web application: [Digital Memory Drum](https://sarahqureshipsych-
 
 This project was developed under the guidance of **Dr. Malik Roshan Ara**, Head, Department of Psychology, Government College for Women, who reviewed the simulator:
 
-> "A commendable and creative attempt to translate a basic psychological concept into an interactive learning tool."
+"A commendable and creative attempt to translate a basic psychological concept into an interactive learning tool."
 
-> "A promising and innovative student initiative."
+"A promising and innovative student initiative."
 
 ### Endorsed By
 
 **Dr. Joel Freund**, Professor Emeritus of Psychology at the University of Arkansas, who used Stowe memory drums throughout his own research career, reviewed the simulator:
 
-> "I am impressed by your research and recreation of a memory drum."
+"I am impressed by your research and recreation of a memory drum."
 
-> "Your interest in the history and seeing your project brought back pleasant memories and made me smile."
+"Your interest in the history and seeing your project brought back pleasant memories and made me smile."
 
 ## Repository Structure
 
-```
-memorydrum/
-├── README.md                          # Project documentation
-├── index.html                         # Main application (HTML + CSS + 3D JavaScript logic)
-├── sitemap.xml                        # SEO sitemap
-├── favicon.png                        # Transparent site icon
-└── googlee446513605abb7fb.html        # Google verification file
-```
+* **memorydrum/** (main project folder)
+* **README.md:** Project documentation
+* **index.html:** Main application (HTML + CSS + 3D JavaScript logic)
+* **sitemap.xml:** SEO sitemap
+* **favicon.png:** Transparent site icon
+* **googlee446513605abb7fb.html:** Google verification file
