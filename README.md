@@ -48,7 +48,7 @@ The simulator houses 11 distinct stimulus sets. Each set contains 10 paired asso
 ## Acknowledgments
 
 ### Project Guidance
-This project was developed under the guidance of **Dr. Malik Roshan Ara**, Professor and Head, Department of Psychology, Government College for Women, who reviewed the simulator:
+This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assistant Professor and Head, Department of Psychology, Government College for Women, who reviewed the simulator:
 > *"A commendable and creative attempt to translate a basic psychological concept into an interactive learning tool."*
 > *"A promising and innovative student initiative."*
 
