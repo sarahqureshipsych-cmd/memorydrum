@@ -6,6 +6,12 @@ An interactive, 3D web-based simulation of the Paired-Associate Learning (PAL) M
 
 ---
 
+## Why This Project Exists
+
+Physical memory drums are now largely confined to museum and archive collections. Most are fragile, scarce, or simply unavailable for hands-on laboratory use, which means most psychology students today only ever encounter this foundational apparatus as a textbook photo, never as something they can actually operate. This project was built to close that gap — giving students and researchers a way to experience the real mechanics of serial and paired-associate learning trials from any browser, at no cost.
+
+---
+
 ## About the Project
 
 The Memory Drum is a historical psychological testing device used to measure learning and memory retention through paired-association learning experiments. This upgraded digital simulation recreates the physical mechanics of the original laboratory equipment, complete with a 10-sided 3D rotating cylinder and interactive mechanical levers, allowing researchers and students to experience strict serial learning trials from home.
@@ -14,7 +20,7 @@ The Memory Drum is a historical psychological testing device used to measure lea
 
 ## Key Features
 
-- **True 3D Cylinder Mechanics:** A mathematically accurate 10-sided polygon drum that physically rotates in 3D space, eliminating Ebbinghaus distraction errors by hiding upcoming words.
+- **True 3D Cylinder Mechanics:** A mathematically accurate 10-sided polygon drum that physically rotates in 3D space, reducing distraction effects by hiding upcoming words.
 - **11 Unique Stimulus Sets:** Includes the original college laboratory list plus 10 additional randomized lists to reduce psychological bias and exposure manipulation between trials.
 - **Interactive Mechanical Levers:** Realistic drag-and-pull UI levers to engage the different experimental phases.
 - **Automated Recall Flaps:** Simulated metal casing and mechanical shutters that open and close to reveal or conceal the response variables based on the active trial phase.
@@ -66,9 +72,9 @@ Visit the live web application: Digital Memory Drum Simulator
 
 ## Acknowledgments
 
-### Project Guidance
+### Project Guide
 
-This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assistant Professor and Head, Department of Psychology, Government College for Women, who reviewed the simulator:
+This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assistant Professor and Head, Department of Psychology, Government College for Women, M.A. Road, who reviewed the Simulator:
 
 > "A commendable and creative attempt to translate a basic psychological concept into an interactive learning tool."
 >
@@ -84,7 +90,7 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 
 ### Classroom Adoption
 
-The Digital Memory Drum Simulator has been formally recognized and adopted for educational use by **Dr. Cathy Faye**, Executive Director of the Cummings Center for the History of Psychology at The University of Akron. Dr. Faye plans to integrate the tool into her university curriculum, stating:
+**Dr. Cathy Faye**, Executive Director of the Cummings Center for the History of Psychology at The University of Akron, on using the Simulator in her teaching:
 
 > "This is really wonderful! Thank you for sharing it. I'd love to share it in my history of psychology class."
 
