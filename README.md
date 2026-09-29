@@ -84,7 +84,7 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 
 ### Classroom Adoption
 
-The Digital Memory Drum Simulator has been formally recognized and adopted for educational use by **Dr. Cathy Faye**, Executive Director of the Cummings Center for the History of Psychology at The University of Akron. Highlighting the simulator's value as a practical teaching resource for historical cognitive methodology, Dr. Faye plans to integrate the tool into her university curriculum, stating:
+The Digital Memory Drum Simulator has been formally recognized and adopted for educational use by **Dr. Cathy Faye**, Executive Director of the Cummings Center for the History of Psychology at The University of Akron. Dr. Faye plans to integrate the tool into her university curriculum, stating:
 
 > "This is really wonderful! Thank you for sharing it. I'd love to share it in my history of psychology class."
 
