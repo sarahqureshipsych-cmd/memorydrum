@@ -2,7 +2,7 @@
 
 **Developer:** Sarah Qureshi | Undergraduate Psychology Researcher, Government College for Women M.A. Road
 
-An interactive, 3D web-based simulation of the Paired-Associate Learning (PAL) Memory Drum, a classic psychology research apparatus pioneered by American psychologist Dr. Mary Whiton Calkins in 1894.
+An interactive, free, 3D web-based simulation of the Memory Drum, a classic psychology research apparatus used for Paired-Associate Learning (PAL) experiments—a methodology pioneered by American psychologist Dr. Mary Whiton Calkins in 1894.
 
 ---
 
@@ -90,7 +90,7 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 
 ### Classroom Adoption
 
-**Dr. Cathy Faye**, Executive Director of the Cummings Center for the History of Psychology at The University of Akron, on using the Simulator in her teaching:
+**Dr. Cathy Faye**, Margaret Clark Morgan Executive Director of the Cummings Center for the History of Psychology at The University of Akron, on using the Simulator in her teaching:
 
 > "This is really wonderful! Thank you for sharing it. I'd love to share it in my history of psychology class."
 
