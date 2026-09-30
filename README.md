@@ -59,7 +59,7 @@ The simulator houses 11 distinct stimulus sets. Each set contains 10 paired asso
 
 ## Getting Started
 
-Visit the live web application: Digital Memory Drum Simulator
+Visit the live web application: https://sarahqureshipsych-cmd.github.io/memorydrum/
 
 ### Conducting a Trial
 
