@@ -94,6 +94,10 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 
 > "This is really wonderful! Thank you for sharing it. I'd love to share it in my history of psychology class."
 
+### What Educators Are Saying
+**Professor Stephan Lewandowsky**, University of Bristol:
+> *"That's a really nice 'memory drum'. I actually remember seeing one in my supervisor's lab when I was an undergraduate – but even then it was already considered a museum piece."*
+
 ---
 
 ## Repository Structure
