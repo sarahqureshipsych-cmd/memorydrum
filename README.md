@@ -82,7 +82,7 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 
 ### Endorsed By
 
-**Dr. Joel Freund**, Professor Emeritus of Psychology at the University of Arkansas, who used Stowe memory drums throughout his own research career, reviewed the simulator:
+**Dr. Joel Freund**, Associate Professor Emeritus of Psychology at the University of Arkansas, who used Stowe memory drums throughout his own research career, reviewed the simulator:
 
 > "I am impressed by your research and recreation of a memory drum."
 >
@@ -100,7 +100,7 @@ This project was developed under the guidance of **Dr. Malik Roshan Ara**, Assis
 > "How's this for taking initiative?"
 > "This is very cool."
 
-**Professor Stephan Lewandowsky**, University of Bristol:
+**Professor Stephan Lewandowsky**, Chair in Cognitive Psychology, University of Bristol:
 > "That's a really nice 'memory drum'. I actually remember seeing one in my supervisor's lab when I was an undergraduate – but even then it was already considered a museum piece."
 
 
