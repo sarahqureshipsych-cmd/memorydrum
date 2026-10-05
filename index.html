@@ -802,7 +802,60 @@
             }
 
         }
+/* INSTRUCTIONS MODAL STYLES */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(3px);
+        }
 
+        .modal-content {
+            background: #fbfbfb;
+            color: #333;
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 35px;
+            border-radius: 8px;
+            position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+            border: 2px solid #4b5563;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 32px;
+            font-weight: bold;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            color: #d9534f;
+        }
+
+        .modal-content h2 { text-align: center; color: #111; margin-top: 0; letter-spacing: 1px; }
+        .modal-content h3 { color: #374151; border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-top: 30px; font-size: 17px; text-transform: uppercase; letter-spacing: 1px;}
+        .modal-content h4 { color: #111; margin-top: 20px; margin-bottom: 8px; font-size: 15px; }
+        .modal-content p { margin-bottom: 15px; font-size: 14.5px; color: #374151; }
+        .modal-content ul { font-size: 14.5px; margin-bottom: 15px; padding-left: 20px; color: #374151; }
+        .modal-content li { margin-bottom: 8px; }
     </style>
 
 </head>
@@ -987,7 +1040,10 @@
         <p>Created by Sarah Qureshi | <a href="https://www.linkedin.com/in/sarah-qureshi-33a459438" target="_blank" style="color: #38bdf8; text-decoration: none; font-weight: bold;">Connect on LinkedIn</a></p>
 
     </div>
-
+<!-- HOW TO USE BUTTON -->
+    <div style="text-align: center; margin-top: 10px; margin-bottom: 30px;">
+        <button class="control-btn" style="width: auto; padding: 12px 24px; font-size: 14px;" onclick="openInstructions()">How to Use</button>
+    </div>
     
 
     <div style="max-width: 640px; margin: 20px auto; padding: 20px 24px; background: #1a1a24; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 6px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; color: #ecf0f1; line-height: 1.6; text-align: left; box-sizing: border-box;">
@@ -1234,7 +1290,24 @@
             spinDrum.style.transform = `rotateX(0deg)`;
 
         }
+// MODAL CONTROLS
+        function openInstructions() {
+            document.getElementById('instructionsModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevents background scrolling while open
+        }
 
+        function closeInstructions() {
+            document.getElementById('instructionsModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restores background scrolling
+        }
+
+        // Close modal if user clicks on the dark overlay outside the box
+        window.onclick = function(event) {
+            const modal = document.getElementById('instructionsModal');
+            if (event.target === modal) {
+                closeInstructions();
+            }
+        }
 
 
         function updateActivePanel() {
@@ -1486,7 +1559,71 @@
         }
 
     </script> 
+<!-- INSTRUCTIONS MODAL -->
+    <div id="instructionsModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInstructions()">&times;</span>
+            
+            <h2>DIGITAL MEMORY DRUM</h2>
+            <p style="text-align: center; font-style: italic; color: #555;">A simulator of the classic paired-associate learning experiment, which tests how well a person can link a nonsense syllable to a target word.</p>
 
+            <h3>HOW IT WORKS</h3>
+            <p>Two roles are needed: an experimenter, who runs the machine and records scores, and a subject, who does the memory task.</p>
+            <p><strong>Step 1. Choose a list.</strong> The experimenter picks one of 11 stimulus lists, each with 10 word pairs. Only one list is used per subject per session. The extra lists keep results clean: a student who overhears someone else's trial gets a fresh list, and a subject retested weeks later isn't helped by familiarity.</p>
+            <p><strong>Step 2. Learning phase.</strong> The experimenter pulls the "1. Learning Phase" lever. The pairs are shuffled, both flaps open, and the drum shows one full pair at a time for 2 seconds, with a half-second pause as it steps forward. The subject tries to remember which syllable goes with which word. Shuffling ensures they learn the pairings, not the order.</p>
+            <p><strong>Step 3. Recall phase.</strong> The experimenter pulls the "2. Recall Phase" lever and the pairs are shuffled again. Now only the left flap opens, showing the syllable while the word stays hidden. The subject has 2 seconds to say the missing word.</p>
+            <p><strong>Step 4. Scoring and repeated trials.</strong> The experimenter marks each answer right or wrong. Learning and recall alternate on the same list until the subject scores 10/10. The number of trials needed is the result. For example, 2/10, 4/10, 8/10, 9/10, 10/10 means five trials.</p>
+
+            <h3>THE PSYCHOLOGY BEHIND IT</h3>
+            <h4>What is paired-associate learning?</h4>
+            <p>The subject learns to link two items so that seeing the first brings the second to mind. The first is the stimulus (the syllable) and the second is the response (the word). It mirrors everyday learning, like matching names to faces or foreign words to their meanings.</p>
+            
+            <h4>How it came about</h4>
+            <p>Hermann Ebbinghaus (1885) wanted to study memory without the influence of what people already know. He created about 2,300 meaningless "nonsense syllables" and memorized lists of them, timing himself with a metronome.</p>
+            <p>Georg Elias Müller and Friedrich Schumann admired his work but spotted three problems. Ebbinghaus was both experimenter and subject. His eyes could drift to neighboring syllables on the list. And a metronome was not a very precise way to give every item equal exposure.</p>
+            <p>Their solution (1887 to 1894): They borrowed the kymograph, a rotating drum normally used to record physiological responses, and turned it on its side. They wrapped the material around it and placed a screen in front so only one item showed at a time. Their 1894 article introduced the memory drum. An earlier device for showing colors and words one at a time had been used by James McKeen Cattell while studying under Wilhelm Wundt in Leipzig. This was not paired-associate learning, which was introduced separately by Mary Whiton Calkins.</p>
+            <p>Otto Lipmann (1904), a student of Ebbinghaus, fixed a remaining flaw. The original drum kept the item constantly moving. Lipmann made it advance in steps, so each item sat still for a fixed time and then moved out of sight.</p>
+            <p>Ralph Gerbrands at Harvard built his drum on Lipmann's design. It appeared in Robert Woodworth's influential <em>Experimental Psychology</em> (1938) and became the model for nearly all later memory drums.</p>
+            <p>Mary Whiton Calkins (1894), the same year as Müller and Schumann's article, introduced the paired-associate method itself. She showed participants pairs such as colors and numbers, then tested recall of one item given the other. She later became the first woman president of the American Psychological Association (1905).</p>
+
+            <h4>The bigger idea: associative learning</h4>
+            <p>Paired-associate learning grew out of the idea that we learn by connecting things. Pavlov's classical conditioning showed that responses can be learned through association, and Skinner's operant conditioning showed that behavior is shaped by its consequences. Paired-associate learning applied this to words, treating verbal learning as direct stimulus-response bonds.</p>
+
+            <h4>Why use a drum?</h4>
+            <p>It gives every subject identical conditions: one item at a time, the same exposure, no peeking. This is why the simulator keeps the exact 2-second timing.</p>
+
+            <h3>WHAT THE EXPERIMENT DEMONSTRATES</h3>
+            <ul>
+                <li><strong>Learning through association:</strong> Memory is built by linking items.</li>
+                <li><strong>Repetition strengthens memory:</strong> Scores usually climb with each trial, forming a learning curve.</li>
+                <li><strong>Learning to criterion:</strong> Practicing until perfect gives a clear measure of learning speed.</li>
+                <li><strong>One-way associations:</strong> Syllable-to-word recall is usually easier than word-to-syllable.</li>
+                <li><strong>Pairs stored as units:</strong> The two items become one memory.</li>
+                <li><strong>Retrieval cues:</strong> The syllable triggers the word.</li>
+                <li><strong>Serial position effect:</strong> Items at the start and end of a list are remembered best. Reshuffling each trial controls for this.</li>
+                <li><strong>Short-term vs. long-term memory:</strong> Early trials rely on short-term memory, while repetition moves the pairs toward long-term storage. A retest weeks later shows how much stuck.</li>
+                <li><strong>Interference:</strong> Similar syllables or words can confuse each other. Müller continued this line of work with Pilzecker in 1900.</li>
+                <li><strong>Forgetting:</strong> Ebbinghaus's forgetting curve shows memory fades fast without review.</li>
+            </ul>
+
+            <h3>WHY IT MATTERS</h3>
+            <ul>
+                <li>It reveals how memory and verbal learning work.</li>
+                <li>It lets researchers study learning rates, forgetting, interference, and retrieval cues.</li>
+                <li>It underlies research on associative memory, and paired-associate tasks are still used in neuropsychological testing.</li>
+            </ul>
+
+            <h3>TRY IT YOURSELF</h3>
+            <ul>
+                <li>Compare trials-to-criterion between people, or between a first test and a retest.</li>
+                <li>See how mental imagery, distraction, or sleep changes your score.</li>
+            </ul>
+
+            <p style="font-size: 12px; color: #777; margin-top: 30px; border-top: 1px solid #ddd; padding-top: 10px;">
+                <strong>SOURCE NOTE:</strong> The history of the drum draws on Joyce and Baker, "Recalling Psychology's Past: The Memory Drum," APS Observer.
+            </p>
+        </div>
+    </div>
 </body>
 
 </html> 
